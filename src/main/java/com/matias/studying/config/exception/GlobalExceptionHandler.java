@@ -3,7 +3,6 @@ package com.matias.studying.config.exception;
 import com.matias.studying.config.exception.runtime.EntityNotFoundException;
 import com.matias.studying.config.exception.runtime.InvalidCredentialsException;
 import com.matias.studying.config.exception.runtime.UserAlreadyExistException;
-import com.matias.studying.config.exception.runtime.WrongResponseException;
 import com.matias.studying.config.security.common.ErrorResponse;
 import java.util.Arrays;
 import java.util.List;
@@ -45,13 +44,6 @@ public class GlobalExceptionHandler {
 		ErrorResponse errorResponse = buildErrorResponse(HttpStatus.UNAUTHORIZED, e.getMessage(),
 				"The server cannot return a response due to invalid credentials.");
 		return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
-	}
-
-	@ExceptionHandler(value = WrongResponseException.class)
-	protected ResponseEntity<ErrorResponse> handleWrongResponseException(WrongResponseException e) {
-		ErrorResponse errorResponse = buildErrorResponse(HttpStatus.NOT_ACCEPTABLE, e.getMessage(),
-				"The response does not belong to the question.");
-		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_ACCEPTABLE);
 	}
 
 	private ErrorResponse buildErrorResponse(HttpStatus httpStatus, String message, List<String> moreInfo) {
