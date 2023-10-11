@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-StudyingApplication<studying>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.matias.studying.StudyingApplication",
+            "projectName": "studying",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

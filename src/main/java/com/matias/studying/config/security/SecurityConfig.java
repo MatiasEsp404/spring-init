@@ -39,12 +39,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private PasswordEncoder passwordEncoder;
 
 	@Bean
-	public AccessDeniedHandler accessDeniedHandler() {
+	AccessDeniedHandler accessDeniedHandler() {
 		return new CustomAccessDeniedHandler();
 	}
 
 	@Bean
-	public AuthenticationEntryPoint authenticationEntryPoint() {
+	AuthenticationEntryPoint authenticationEntryPoint() {
 		return new CustomAuthenticationEntryPoint();
 	}
 
